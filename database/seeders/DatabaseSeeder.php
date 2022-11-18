@@ -23,7 +23,12 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
     //  create 1000 records
-    
+    $this->call([
+
+        //CarSeeder::class,
+        TypesSeeder::class,
+        HousesSeeder::class,
+    ]);
 
     }
 }

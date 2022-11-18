@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\StudentsController;
+use App\Http\Controllers\TypesController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,4 +18,11 @@ Route::get('/', function () {
     return view('piechart');
 });
 Route::get('/city',[StudentsController::class,'index']);
+
+Route::resource('user', Controller::class);
+Route::any('users/{id}', function ($id) {
+
+});
+Route::post('/edit/{id}',[StudentsController::class,'edit']);
+route::get('/type',[TypesController::class,'index']);
 

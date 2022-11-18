@@ -18,6 +18,7 @@ class StudentsController extends Controller
         $result = Students::select('city', DB::raw('count(*) as total'))
             ->groupBy('city')
             ->get()->toArray();
+            print_r($result);
 
         // $chartĐata = '';
         // foreach ($result as $list) {
@@ -25,7 +26,7 @@ class StudentsController extends Controller
         //     $chartĐata = rtrim($chartĐata, ',');
 
         // }
-        
+
 
         return view('chart.chartofcity', compact('result'));
     }
